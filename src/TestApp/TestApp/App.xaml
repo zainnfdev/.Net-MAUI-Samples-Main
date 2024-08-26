@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Application
+    x:Class="TestApp.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TestApp">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <x:Double x:Key="ItemSpacing">10</x:Double>
+
+            <Style x:Key="MauiLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextDark}, Light={StaticResource Primary}}" />
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="StackBase">
+                <Setter Property="Spacing" Value="{StaticResource ItemSpacing}" />
+            </Style>
+
+            <Style x:Key="ContentArea" TargetType="Grid">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource BackgroundDark}, Light={StaticResource BackgroundLight}}" />
+            </Style>
+
+            <Style x:Key="PrimaryAction" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{DynamicResource Primary}" />
+                <Setter Property="TextColor" Value="{DynamicResource PrimaryText}" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

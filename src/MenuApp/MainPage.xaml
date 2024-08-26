@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:MenuApp.ViewModels"
+    x:Name="page"
+    Title="Main Page"
+    x:DataType="vm:MainViewModel">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.MenuBarItems>
+        <MenuBarItem
+            BindingContext="{Binding Source={x:Reference page}, Path=BindingContext}"
+            Text="File">
+            <MenuFlyoutItem
+                Command="{Binding QuitCommand}"
+                Text="Quit" />
+        </MenuBarItem>
+        <MenuBarItem Text="Locations">
+            <MenuFlyoutSubItem Text="Change Location">
+                <MenuFlyoutItem Text="New York, USA" />
+                <MenuFlyoutItem Text="London, UK" />
+                <MenuFlyoutItem Text="Cape Town, RSA" />
+                <MenuFlyoutItem Text="Beijing, PRC" />
+                <MenuFlyoutSubItem Text="India">
+                    <MenuFlyoutItem Text="Chennai, TN" />
+                    <MenuFlyoutItem Text="Kolkata, WB" />
+                    <MenuFlyoutItem Text="Mumbai, MH" />
+                    <MenuFlyoutItem Text="New Delhi, NCR" />
+                </MenuFlyoutSubItem>
+            </MenuFlyoutSubItem>
+            <MenuFlyoutItem Text="Add a Location" />
+        </MenuBarItem>
+        <MenuBarItem Text="View">
+            <MenuFlyoutItem Text="Refresh" />
+            <MenuFlyoutItem Text="Toggle Light/Dark Mode" />
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
+
+    <ScrollView>
+        <StackLayout
+            Padding="30"
+            Spacing="25">
+
+            <Label
+                FontSize="32"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1"
+                Style="{StaticResource MauiLabel}"
+                Text="Hello, World!" />
+
+            <Label
+                FontSize="18"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                SemanticProperties.HeadingLevel="Level1"
+                Style="{StaticResource MauiLabel}"
+                Text="Welcome to .NET Multi-platform App UI" />
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                HorizontalOptions="Center"
+                Style="{StaticResource MauiLabel}"
+                Text="{Binding CurrentCount}" />
+
+            <Button
+                Command="{Binding CountCommand}"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Style="{StaticResource PrimaryAction}"
+                Text="Click Me" />
+
+            <Image
+                HeightRequest="310"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                Source="dotnet_bot.png"
+                WidthRequest="250" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

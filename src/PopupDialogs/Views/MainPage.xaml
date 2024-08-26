@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pages:MauiPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:VijayAnand.MauiToolkit.Views;assembly=VijayAnand.MauiToolkit"
+    xmlns:vm="clr-namespace:PopupDialogs.ViewModels"
+    x:Class="PopupDialogs.Views.MainPage"
+    x:DataType="vm:MainViewModel"
+    x:TypeArguments="vm:MainViewModel">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="15">
+
+            <Label
+                FontSize="32"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1"
+                Style="{StaticResource MauiLabel}"
+                Text="Hello, World!" />
+
+            <Label
+                FontSize="18"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                SemanticProperties.HeadingLevel="Level1"
+                Style="{StaticResource MauiLabel}"
+                Text="Welcome to .NET Multi-platform App UI" />
+
+            <!--<Label
+                x:Name="CounterLabel"
+                FontAttributes="Bold"
+                FontSize="18"
+                HorizontalOptions="Center"
+                Style="{StaticResource MauiLabel}"
+                Text="Current count: 0" />-->
+
+            <Label
+                HorizontalOptions="Center"
+                Text="Generic abstraction" />
+
+            <VerticalStackLayout
+                HorizontalOptions="Center"
+                Spacing="15">
+                <Button
+                    Command="{Binding GenericDialogCommand}"
+                    CommandParameter="Alert1"
+                    SemanticProperties.Hint="Shows an alert dialog"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Show Alert" />
+                <Button
+                    Command="{Binding GenericDialogCommand}"
+                    CommandParameter="Alert2"
+                    SemanticProperties.Hint="Shows an alert dialog with accept and cancel actions"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Show Alert 2" />
+                <Button
+                    Command="{Binding GenericDialogCommand}"
+                    CommandParameter="Prompt"
+                    SemanticProperties.Hint="Shows a prompt dialog"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Show Prompt" />
+                <Button
+                    Command="{Binding GenericDialogCommand}"
+                    CommandParameter="ActionSheet"
+                    SemanticProperties.Hint="Shows an action sheet"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Show ActionSheet" />
+                <Button
+                    Command="{Binding GenericDialogCommand}"
+                    CommandParameter="Static"
+                    SemanticProperties.Hint="Shows an action sheet"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Static Approach" />
+                </VerticalStackLayout>
+
+            <Label
+                HorizontalOptions="Center"
+                Text="With support for .NET MAUI FlowDirection&#10;Sample shown with the value set to Right-to-Left." />
+
+            <VerticalStackLayout
+                HorizontalOptions="Center"
+                Spacing="15">
+                <Button
+                    Command="{Binding MauiDialogCommand}"
+                    CommandParameter="Alert1"
+                    SemanticProperties.Hint="Shows an alert dialog"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Show Alert" />
+                <Button
+                    Command="{Binding MauiDialogCommand}"
+                    CommandParameter="Alert2"
+                    SemanticProperties.Hint="Shows an alert dialog with accept and cancel actions"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Show Alert 2" />
+                <Button
+                    Command="{Binding MauiDialogCommand}"
+                    CommandParameter="Prompt"
+                    SemanticProperties.Hint="Shows a prompt dialog"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Show Prompt" />
+                <Button
+                    Command="{Binding MauiDialogCommand}"
+                    CommandParameter="ActionSheet"
+                    SemanticProperties.Hint="Shows an action sheet"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Show ActionSheet" />
+                <Button
+                    Command="{Binding MauiDialogCommand}"
+                    CommandParameter="Static"
+                    SemanticProperties.Hint="Shows an action sheet"
+                    Style="{StaticResource PrimaryAction}"
+                    Text="Static Approach" />
+                </VerticalStackLayout>
+
+            <!--<Image
+                HeightRequest="310"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                Source="dotnet_bot.png"
+                WidthRequest="250" />-->
+
+        </VerticalStackLayout>
+    </ScrollView>
+</pages:MauiPage>
